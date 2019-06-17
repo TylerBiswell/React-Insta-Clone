@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PropTypes from 'prop-types';
+import PostContainer from './components/PostContainer/PostContainer';
 
 function App() {
   return (
