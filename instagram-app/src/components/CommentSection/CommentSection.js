@@ -9,8 +9,10 @@ function CommentSection(props) {
     return (
         <div className = "comment-section">
             {props.comments.map(comment => <Comment comment = {comment} key ={comment.id}/>)}
-        <form>
-            <input className="newcomment" type="text" placeholder="Leave a comment"/>
+        <form className="commentform">
+        <input className="newcomment" 
+            type="text" 
+            placeholder="Add a comment..."/>
         </form>
         </div>
     );
