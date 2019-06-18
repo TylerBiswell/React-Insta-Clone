@@ -1,26 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PostContainer from './components/PostContainer/PostContainer';
+import './App.scss';
+import dummyData from './dummy-data';
+import SearchBar from './components/SearchBar/SearchBar';
 
-function App() {
-  return (
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      dataset: dummyData
+    }
+  }
+  render() {
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <SearchBar />
+      <div className="posts">
+        {this.state.dataset.map(data => <PostContainer data={data} key={data.id}/>)}
+      </div>
     </div>
-  );
+    );}
 }
 
 export default App;
